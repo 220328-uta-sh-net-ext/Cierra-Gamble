@@ -1,0 +1,164 @@
+#These are notes via HackerRank on how to write script commands under/for shell. 
+
+#exercises start at line 6
+next syntax
+
+#Write script For natural odd numbers in range between 1 o 9
+
+#for statements NEED "in", do MUST be finished with "done"
+#i stands for number in between 1 through 99; the symbol % stands for modulus/showing integers w/remainders
+
+for i in {1..99} ; 
+do
+    ((i%2)) && echo "$i"
+done 
+#done with thie script ^. next beings on line 19
+
+#the brackets {} are considered bodies that hold values/variables, semi colon closes that range syntax
+
+next syntax
+#Use a for loop to display the natural numbers from 1 to 50.
+
+x=1
+
+#x variable equals ((x+1)) or natural number 
+#le is less than equal to
+#loop for natural numbers or numbers with no remainder
+
+#syntax 
+#! /bin/bash
+#always start with this 
+
+while [ $x -le 50 ]
+do
+    echo $x
+    x=$((x+1))
+    done
+#end of this script
+
+next syntax
+#give integers for variables x and y
+#x and y must be greater than negative hundered, and less than possitive hundred
+#y cannot equal 0
+
+x=5
+y=2
+
+#! /bin/bash
+
+read x
+read y
+
+echo "$((x + y))"
+echo "$((x - y))"
+echo "$((x * y))"
+echo "$((x / y))" 
+#end of this script^
+
+next syntax
+#here we are script for identifying whether or not x is greater than, less than, or equal to y
+
+#variables do not need value in script, but helps if put into context
+
+#! /bin/bash
+
+read x;
+read y;
+
+if [ $x -lt $y ]
+then
+echo "X is less than Y";
+elif [ $x -gt $y ]
+then
+echo "X is greater than Y";
+else
+echo "X is equal to Y";
+fi
+#end of this script. next starts on line 79
+
+#! /bin/bash
+#Read in one character from STDIN.
+#If the character is 'Y' or 'y' display "YES".
+#If the character is 'N' or 'n' display "NO".
+
+
+read -r c
+if [[ ${c^^} == Y ]];
+then echo YES
+else echo NO
+fi
+#read -r is a standard input, must be followed by echo command to execute what to do when variable is read
+#if else and then are nesting statements used to execute first [command] where the condition is true, 
+#or the optional ELSE if no conditions match.
+#The else part of the if/else statement follows the same rules as the if part. If you want to execute multiple statements for the else condition, enclose the code in curly brackets. If you only need to execute a single statement for the else condition, you do not need to use curly brackets.
+#end of this script, next starts on like 96
+
+#THIS EXERCISE IS TO SHOW HOW TO IDENTIFY 3 THINGS SUCH AS TYPE OF TRIANGLE CAN BE SCRIPTED AND IDENTIFIED
+
+#! /bin/bash
+#three integers x,y, and z are used to identify type of triangle
+#three equal sides, equilateral. two equal sides, isosceles.
+#scalene if no equal sides
+
+read -r X
+read -r Y
+read -r Z
+
+#READ files MUST be followed up with echo to identify what is read, read -r is standard input for variable
+#reads X as equilateral 3 equal sides, Y as isosceles 2 equal sides, and Z as have no equal sides
+
+if [ "$x" -eq "$y" ] && [ "$y" -eq "$z" ]
+then
+echo "EQUILATERAL";
+elif [ "$x" -ne "$y" ] && [ "$x" -ne "$z" ] && 
+        [ "$y" -ne "$z" ] || [ "$y" -ne "$z" ]
+then
+echo "SCALENE";
+else
+echo "ISOSCELES";
+fi
+
+#When doing "if, "else" "then", "elif" statements, use double quotes, space and tab to prevent clumping. 
+#use separators like and (&&) + or (||) for elif or else until all conditions are met, even for the ones that are not met (aka come up false).
+#AND (&&) operator is executed before the OR (||) operator
+
+#this is the end of this script. next begins on line 127
+
+#in this exercise
+#A mathematical expression containing +,-,*,^, / and parenthesis will be provided. Read in the expression, then evaluate it. Display the result rounded to  decimal places.
+
+#! /bin/bash
+
+#for mathematical expressions
+
+read string
+
+res=$(echo "$string" | bc -l)
+
+printf "%.3f" "$res"
+
+#%.3f equals "Treat the input as a floating-point number [3 spaces over]."
+#$Res equals "results"
+#bc -l equals ""
+#is the end of this script, next starts on like 145
+
+#Problem Statement; Given N integers, compute their average correct to three decimal places.
+#Input Format ; The first line contains an integer, N. N lines follow, each containing a single integer.
+#Output Format; Display the average of the N integers, rounded off to three decimal places.
+#Input Constraints 1≤N≤500 ,−10000≤x≤10000 (x refers to elements of the list of integers for which the average is to be computed)
+
+#! /bin/bash
+
+read t;
+sum=0;
+for ((i=0;i<t;i++))
+do
+read num;
+sum=$((sum+num));
+done
+printf "%.3f" $(echo "scale=4; $sum / $t " | bc );
+
+
+#i equals "integer", 
+#++ equals "increment operator and is used to add one to the current value of the operator."
+#scale is used for division problems and in this case used to help divide and give quotient of 4 decimal places
