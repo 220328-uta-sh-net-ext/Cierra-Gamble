@@ -1,0 +1,257 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red18\green18\blue18;\red255\green255\blue255;\red20\green108\blue14;
+\red63\green63\blue63;\red224\green224\blue224;\red200\green200\blue200;\red44\green33\blue70;\red234\green206\blue252;
+}
+{\*\expandedcolortbl;;\cssrgb\c9020\c9020\c9020;\cssrgb\c100000\c100000\c100000;\cssrgb\c6275\c48627\c6275;
+\cssrgb\c31373\c31373\c31373;\cssrgb\c90196\c90196\c90196;\cssrgb\c82353\c82353\c82353;\cssrgb\c23137\c18039\c34510;\cssrgb\c93725\c85098\c99216;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid101\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs70\fsmilli35300 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Value types and reference types\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+
+\f1\b0\fs18 \cf3 \cb4 Completed\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf3 \cb4 100 XP\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\fs28 \cf5 \cb3 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+5 minutes
+\fs32 \cf2 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 With so many different data types available in C#, choosing the right one to use means that you'll need to understand what each one does and when you might choose one data type over another.\cb1 \
+\cb3 But before we can discuss 
+\f2\i why
+\f1\i0  you might choose one type over another, first you need to understand how data and data types work in C# and .NET, and learn about more data types, including key differentiations between similar data types.\cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b\fs60 \cf2 \cb3 What is data?\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs32 \cf2 \cb3 Answering the question "what is data" depends on who you ask, and in what context you're asking it.\cb1 \
+\cb3 In software development, data is essentially a value that is stored in the computer's memory as a series of bits. A 
+\f0\b bit
+\f1\b0  is a simple binary switch represented as a 
+\f3\fs27\fsmilli13600 \cb6 0
+\f1\fs32 \cb3  or 
+\f3\fs27\fsmilli13600 \cb6 1
+\f1\fs32 \cb3 , or rather, "off" and "on", respectively. A single bit doesn't seem useful, however when you combine 8 bits together in a sequence, they form a 
+\f0\b byte
+\f1\b0 . When used in a byte, each bit takes on a meaning in the sequence. In fact, you can represent 256 different combinations with just 8 bits if you use a binary (or rather, base-2) numeral system.\cb1 \
+\cb3 For example, in a binary numeral system, you can represent the number 
+\f3\fs27\fsmilli13600 \cb6 195
+\f1\fs32 \cb3  as 
+\f3\fs27\fsmilli13600 \cb6 11000011
+\f1\fs32 \cb3 . The following table will help you visualize how this works. The first row has 8 columns that correspond to a position in a byte. Each position represents a different numeric value. The second row can store the value of an individual bit, either 
+\f3\fs27\fsmilli13600 \cb6 0
+\f1\fs32 \cb3  or 
+\f3\fs27\fsmilli13600 \cb6 1
+\f1\fs32 \cb3 .\cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart320 \trbrdrt\brdrs\brdrw20\brdrcf7 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 
+\clvertalt \clshdrawnil \clwWidth2281\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx1080
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx3240
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx5400
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx7560
+\clvertalt \clshdrawnil \clwWidth1713\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b\fs28 \cf2 \cb3 128\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 64\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 32\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 16\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 8\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 4\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 2\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart320 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrb\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 
+\clvertalt \clshdrawnil \clwWidth2281\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx1080
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx3240
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx5400
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx7560
+\clvertalt \clshdrawnil \clwWidth1713\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f1\b0 \cf2 \cb3 1\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell \lastrow\row
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf2 \cb3 If you add up the number from each column in the first row that corresponds to a 
+\f3\fs27\fsmilli13600 \cb6 1
+\f1\fs32 \cb3  in the second row, you'll get the decimal equivalent to the binary numeral system representation. In this case, it would be 
+\f3\fs27\fsmilli13600 \cb6 128 + 64 + 2 + 1 = 195
+\f1\fs32 \cb3 .\cb1 \
+\cb3 To work with larger values beyond 
+\f3\fs27\fsmilli13600 \cb6 255
+\f1\fs32 \cb3 , the computer would need to store more bytes. If you're working with millions of large numbers in a scientific setting, you may need to consider more carefully which data types you're using. Your code could require much more memory to run.\cb1 \
+\pard\pardeftab720\sa360\partightenfactor0
+
+\f0\b\fs49\fsmilli24707 \cf2 \cb3 What about textual data?\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs32 \cf2 \cb3 If a computer only understands 
+\f3\fs27\fsmilli13600 \cb6 0
+\f1\fs32 \cb3 s and 
+\f3\fs27\fsmilli13600 \cb6 1
+\f1\fs32 \cb3 s, then how does it allow us to work with text? Using a system like ASCII, you can use a single byte to represent upper and lowercase letters, numbers, tab, backspace, newline and many mathematical symbols, blocks, lines, and so on.\cb1 \
+\cb3 For example, if I wanted to store a lower-case letter 
+\f3\fs27\fsmilli13600 \cb6 a
+\f1\fs32 \cb3  as a value in my application, the computer would only understand the binary form of that value. If I wanted to better understand how it's handled by the computer, I would first need to locate an ASCII table that provides a lookup of ASCII values and their decimal equivalents. You can search for the terms "ASCII lookup decimal" to locate such a resource online.\cb1 \
+\cb3 In this case, the lower-case letter 
+\f3\fs27\fsmilli13600 \cb6 a
+\f1\fs32 \cb3  is equivalent to the decimal value 
+\f3\fs27\fsmilli13600 \cb6 97
+\f1\fs32 \cb3 . Then, I would use the same binary numeral system in reverse to find how an ASCII letter 
+\f3\fs27\fsmilli13600 \cb6 a
+\f1\fs32 \cb3  is stored by the computer.\cb1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart320 \trbrdrt\brdrs\brdrw20\brdrcf7 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 
+\clvertalt \clshdrawnil \clwWidth2281\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx1080
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx3240
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx5400
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx7560
+\clvertalt \clshdrawnil \clwWidth1713\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b\fs28 \cf2 \cb3 128\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 64\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 32\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 16\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 8\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 4\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 2\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamart320 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrb\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 
+\clvertalt \clshdrawnil \clwWidth2281\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx1080
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx3240
+\clvertalt \clshdrawnil \clwWidth1979\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx5400
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth1695\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx7560
+\clvertalt \clshdrawnil \clwWidth1713\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf7 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt320 \clpadl400 \clpadb320 \clpadr400 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f1\b0 \cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 0\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \cb3 1\cb1 \cell \lastrow\row
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf2 \cb3 Or, rather, 
+\f3\fs27\fsmilli13600 \cb6 64 + 32 + 1 = 97
+\f1\fs32 \cb3 .\cb1 \
+\cb3 It's likely that you'll never need to perform these types of conversions on your own, but understanding the computer's perspective of data is a foundational concept, especially as we're considering data types.\cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b\fs60 \cf2 \cb3 What is a data type?\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs32 \cf2 \cb3 A data type is a programming language construct that defines how much memory to reserve for a value. This is why we have so many data types -- because the designers of the programming language understand that it will be used for many different applications and sizes of data.\cb1 \
+\cb3 Given the type of applications you'll build in your career, you'll come to realize you settle on a small subset of all the available data types. However, it's still vital to know others exist and why.\cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b\fs60 \cf2 \cb3 Value vs. reference types\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs32 \cf2 \cb3 There are two basic categories of data types: 
+\f2\i value types
+\f1\i0  and 
+\f2\i reference types
+\f1\i0 . The fundamental difference between value and reference types concerns where those values are temporarily stored in memory as your application executes. Where the value is stored affects how the .NET runtime manages the life of the value including its declaration (birth), assignment and retrieval (life), and finalization (death). This, in turn, impacts the syntax you use when working with either a value type or a reference type.\cb1 \
+\cb3 This module will focus on simple value and reference types. As you learn more about C#, new details will emerge related to the fundamental difference between value and reference types.\cb1 \
+\pard\pardeftab720\sa360\partightenfactor0
+
+\f0\b\fs49\fsmilli24707 \cf2 \cb3 Simple value types\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs32 \cf2 \cb3 Simple value types are a set of predefined types provided by C# as keywords. These keywords are merely aliases for predefined types defined in the .NET Class Library. For example, the C# keyword 
+\f3\fs27\fsmilli13600 \cb6 int
+\f1\fs32 \cb3  is an alias of a value type defined in the .NET Class Library as 
+\f3\fs27\fsmilli13600 \cb6 System.Int32
+\f1\fs32 \cb3 .\cb1 \
+\cb3 Simple value types include many of the data types that you may have used already like 
+\f3\fs27\fsmilli13600 \cb6 char
+\f1\fs32 \cb3  and 
+\f3\fs27\fsmilli13600 \cb6 bool
+\f1\fs32 \cb3 . There are also many 
+\f0\b integral
+\f1\b0  and 
+\f0\b floating-point
+\f1\b0  value types to represent a wide range of whole and fractional numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf8 \cb9 Note\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf2 \cb9 Besides simple value types, other value types include enums and structs. However, we'll cover those in other modules.\cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b\fs60 \cf2 \cb3 Recap\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f1\b0\fs32 \cf2 \cb3 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Values are stored as bits, which are simple on / off switches. Combining enough of these switches allows you to store just about any possible value.\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+There are two basic categories of data types: value and reference types. The difference is in how and where the values are stored by the computer as your program executes.\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Simple value types include signed and unsigned integral numeric types and floating-point numeric types.\cb1 \
+}
